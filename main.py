@@ -2,6 +2,7 @@ import cv2
 import time
 import os
 import PIL
+import pysstv
 from PIL import Image
 from PIL import ImageDraw
 
@@ -46,13 +47,22 @@ def imageProcessing():
     I1 = ImageDraw.Draw(img)
  
 # Add Text to an image
-    I1.text((28, 36), "KI5UXW Testing Image", fill=(0, 0, 0))
+    I1.text((30, 36), "KI5UXW Experimental Data Transmission", fill=(0, 0, 0))
+
+    I2 = ImageDraw.Draw(img)
+ 
+# Add Text to an image
+    I2.text((30, 30), "The A.M.E.A. Project", fill=(0, 0, 0))
  
 # Display edited image
     img.show()
  
 # Save the edited image
     img.save("AMEA.png")
+
+def ConvSSTV():
+    pass
+    
 
 takePic()
 imageProcessing()
