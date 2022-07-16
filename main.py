@@ -36,8 +36,8 @@ def takePic():
     else:
         print("No image detected. Please! try again")
 
-    def imageProcessing():
-        im = PIL.open(r"C:\Users\hubba\documents\GitHub\SSTV-and-Data-Transmission\AMEA.png") 
+def imageProcessing():
+    im = PIL.open(r"C:\Users\hubba\documents\GitHub\SSTV-and-Data-Transmission\AMEA.png")
 
 
 takePic()
