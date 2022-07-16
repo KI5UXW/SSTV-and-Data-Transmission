@@ -6,6 +6,19 @@ import pysstv
 from PIL import Image
 from PIL import ImageDraw
 
+import unittest
+from io import BytesIO
+from itertools import islice
+import mock
+from mock import MagicMock
+import hashlib
+
+from pysstv import sstv
+from pysstv.sstv import SSTV
+from pysstv.tests.common import load_pickled_asset
+
+from playsound import playsound
+
 def takePic():
     # initialize the camera
     # If you have multiple camera connected with 
@@ -52,7 +65,7 @@ def imageProcessing():
     I2 = ImageDraw.Draw(img)
  
 # Add Text to an image
-    I2.text((30, 30), "The A.M.E.A. Project", fill=(0, 0, 0))
+    I2.text((30, 46), "The A.M.E.A. Project", fill=(0, 0, 0))
  
 # Display edited image
     img.show()
@@ -61,8 +74,19 @@ def imageProcessing():
     img.save("AMEA.png")
 
 def ConvSSTV():
-    pass
+    baseImage = Image.open('AMEA.png')
+    s = SSTV(baseImage, 48000, 16)
+    s.VIS_CODE = 0x00
+    s.SYNC = 7
+    s.write_wav('transmission.wav')
+
+def AudioPlay():
+    playsound('transmission.wav')
+
+
     
 
 takePic()
 imageProcessing()
+ConvSSTV()
+AudioPlay()
