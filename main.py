@@ -1,9 +1,6 @@
+import cv2
+
 def takePic():
-    # program to capture single image from webcam in python
-  
-    # importing OpenCV library
-    import cv2
-  
     # initialize the camera
     # If you have multiple camera connected with 
     # current device, assign a value in cam_port 
