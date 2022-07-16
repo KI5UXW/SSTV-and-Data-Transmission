@@ -16,8 +16,11 @@ import hashlib
 from pysstv import sstv
 from pysstv.sstv import SSTV
 from pysstv.tests.common import load_pickled_asset
+from pysstv.color import Robot36
 
-from playsound import playsound
+import winsound
+
+import struct, sys
 
 def takePic():
     # initialize the camera
@@ -75,13 +78,16 @@ def imageProcessing():
 
 def ConvSSTV():
     baseImage = Image.open('AMEA.png')
-    s = SSTV(baseImage, 48000, 16)
-    s.VIS_CODE = 0x00
-    s.SYNC = 7
-    s.write_wav('transmission.wav')
+    baseImage = baseImage.resize((Robot36.WIDTH, Robot36.HEIGHT))
+    sstv = Robot36(baseImage, 44100, 16)
+    for freq, msec in sstv.gen_freq_bits():
+        sys.stdout.write(struct.pack('ff', freq, msec))
+    sstv.write_wav('transmission.wav')
 
 def AudioPlay():
-    playsound('transmission.wav')
+
+    filename = 'transmission.wav'
+    winsound.PlaySound(filename, winsound.SND_FILENAME)
 
 
     

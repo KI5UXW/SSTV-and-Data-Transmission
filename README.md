@@ -3,4 +3,4 @@
 
 Use conda activate AMEATrans in the Command Prompt to access the packages (For Developer, probably).
 
-Requires PySSTV, Pillow, Numpy, and OpenCV.
+Requires a lot of dependencies.
