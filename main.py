@@ -1,6 +1,7 @@
 import cv2
 import time
 import os
+import PIL
 
 def takePic():
     # initialize the camera
