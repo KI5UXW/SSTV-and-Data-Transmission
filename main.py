@@ -30,14 +30,15 @@ def takePic():
   
         # If keyboard interrupt occurs, destroy image 
         # window
-        cv2.destroyWindow("GeeksForGeeks")
+        cv2.destroyWindow("AMEA")
   
     # If captured image is corrupted, moving to else part
     else:
         print("No image detected. Please! try again")
 
     def imageProcessing():
-        pass
+        im = PIL.open(r"C:\Users\hubba\documents\GitHub\SSTV-and-Data-Transmission\AMEA.png") 
 
 
 takePic()
+imageProcessing()
