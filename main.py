@@ -2,6 +2,8 @@ import cv2
 import time
 import os
 import PIL
+from PIL import Image
+from PIL import ImageDraw
 
 def takePic():
     # initialize the camera
@@ -37,8 +39,20 @@ def takePic():
         print("No image detected. Please! try again")
 
 def imageProcessing():
-    im = PIL.open(r"C:\Users\hubba\documents\GitHub\SSTV-and-Data-Transmission\AMEA.png")
-
+    
+    img = Image.open('AMEA.png')
+ 
+    
+    I1 = ImageDraw.Draw(img)
+ 
+# Add Text to an image
+    I1.text((28, 36), "KI5UXW Testing Image", fill=(0, 0, 0))
+ 
+# Display edited image
+    img.show()
+ 
+# Save the edited image
+    img.save("AMEA.png")
 
 takePic()
 imageProcessing()
