@@ -1,4 +1,5 @@
 import cv2
+import time
 
 def takePic():
     # initialize the camera
@@ -18,15 +19,19 @@ def takePic():
         # showing result, it take frame name and image 
         # output
         cv2.imshow("AMEA", image)
+        
+        #Enable script below to show the image while running the program.
+        #time.sleep(5)
   
         # saving image in local storage
         cv2.imwrite("AMEA.png", image)
   
         # If keyboard interrupt occurs, destroy image 
         # window
-        cv2.waitKey(0)
         cv2.destroyWindow("GeeksForGeeks")
   
     # If captured image is corrupted, moving to else part
     else:
         print("No image detected. Please! try again")
+
+takePic()
