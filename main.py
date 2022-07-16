@@ -80,8 +80,8 @@ def ConvSSTV():
     baseImage = Image.open('AMEA.png')
     baseImage = baseImage.resize((Robot36.WIDTH, Robot36.HEIGHT))
     sstv = Robot36(baseImage, 44100, 16)
-    for freq, msec in sstv.gen_freq_bits():
-        sys.stdout.write(struct.pack('ff', freq, msec))
+    #for freq, msec in sstv.gen_freq_bits():
+        #sys.stdout.write(struct.pack('ff', freq, msec))
     sstv.write_wav('transmission.wav')
 
 def AudioPlay():
