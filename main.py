@@ -34,4 +34,8 @@ def takePic():
     else:
         print("No image detected. Please! try again")
 
+    def imageProcessing():
+        pass
+
+
 takePic()
