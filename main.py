@@ -61,29 +61,26 @@ def takePic():
         print("No image detected. Please! try again")
 
 def lightAnalysis():
-    #Flashlight in front of camera: 247.43088462912542
-    #Finger covering camera: 
+    #Flashlight in front of camera: 247.43088462912542 (Approximately 250 Units)
+    #Finger covering camera: 3.6265194813513904 (Approximately 0 Units)
     im = Image.open('AMEA.png')
     stat = ImageStat.Stat(im)
     r,g,b = stat.mean
-    return math.sqrt(0.241*(r**2) + 0.691*(g**2) + 0.068*(b**2))
+    Deos = math.sqrt(0.241*(r**2) + 0.691*(g**2) + 0.068*(b**2))
+    return Deos
 
-def imageProcessing():
+def imageProcessing(Deos):
     
     img = Image.open('AMEA.png')
 
     myFont = ImageFont.truetype('arial.ttf', 15)
 
-    textFont = None
-
     I1 = ImageDraw.Draw(img)
  
-# Add Text to an image
     I1.text((30, 36), "KI5UXW Experimental Data Transmission", fill=(0, 0, 0), font=myFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=1, stroke_fill=None, embedded_color=False)
 
     I2 = ImageDraw.Draw(img)
 
-# Add Text to an image
     I2.text((30, 46), "The A.M.E.A. Project", fill=(0, 0, 0), font=myFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=1, stroke_fill=None, embedded_color=False)
  
 # Display edited image
@@ -111,7 +108,7 @@ def AudioPlay():
 
 takePic()
 lightLevel = lightAnalysis()
-print(str(lightLevel))
-imageProcessing()
+#print(str(lightLevel), "Deos")
+imageProcessing(lightLevel)
 ConvSSTV()
 AudioPlay()
