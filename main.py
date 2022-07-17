@@ -73,7 +73,7 @@ def imageProcessing(Deos):
     
     img = Image.open('AMEA.png')
 
-    myFont = ImageFont.truetype('arial.ttf', 15)
+    myFont = ImageFont.truetype('arial.ttf', 20)
 
     #Black Image: 0.0 Deos
     #Dark Grey Image: 26.0760322482 Deos
@@ -98,7 +98,7 @@ def imageProcessing(Deos):
 
     I2 = ImageDraw.Draw(img)
 
-    I2.text((30, 50), "The A.M.E.A. Project", fill=colorChoice, font=myFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=0, stroke_fill=None, embedded_color=False)
+    I2.text((30, 55), "The A.M.E.A. Project", fill=colorChoice, font=myFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=0, stroke_fill=None, embedded_color=False)
  
 # Display edited image
 
