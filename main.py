@@ -22,6 +22,8 @@ import winsound
 
 import struct, sys
 
+from PIL import ImageFont
+
 def takePic():
     # initialize the camera
     # If you have multiple camera connected with 
@@ -59,7 +61,7 @@ def imageProcessing():
     
     img = Image.open('AMEA.png')
  
-    
+
     I1 = ImageDraw.Draw(img)
  
 # Add Text to an image
@@ -68,7 +70,7 @@ def imageProcessing():
     I2 = ImageDraw.Draw(img)
  
 # Add Text to an image
-    I2.text((30, 46), "The A.M.E.A. Project", fill=(0, 0, 0))
+    I2.text((30, 46), "The A.M.E.A. Project", fill=(0, 0, 0), font=None, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=3, stroke_fill=None, embedded_color=False)
  
 # Display edited image
     img.show()
