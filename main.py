@@ -60,17 +60,18 @@ def takePic():
 def imageProcessing():
     
     img = Image.open('AMEA.png')
- 
+
+    textFont = ImageFont.truetype("Pillow/Tests/fonts/FreeMono.ttf", 40)
 
     I1 = ImageDraw.Draw(img)
  
 # Add Text to an image
-    I1.text((30, 36), "KI5UXW Experimental Data Transmission", fill=(0, 0, 0))
+    I1.text((30, 36), "KI5UXW Experimental Data Transmission", fill=(0, 0, 0), font=textFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=3, stroke_fill=None, embedded_color=False)
 
     I2 = ImageDraw.Draw(img)
- 
+
 # Add Text to an image
-    I2.text((30, 46), "The A.M.E.A. Project", fill=(0, 0, 0), font=None, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=3, stroke_fill=None, embedded_color=False)
+    I2.text((30, 46), "The A.M.E.A. Project", fill=(0, 0, 0), font=textFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=3, stroke_fill=None, embedded_color=False)
  
 # Display edited image
 
