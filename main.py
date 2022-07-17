@@ -8,14 +8,6 @@ from PIL import ImageDraw
 from PIL import ImageFont
 from PIL import ImageStat
 
-
-import unittest
-from io import BytesIO
-from itertools import islice
-import mock
-from mock import MagicMock
-import hashlib
-
 from pysstv import sstv
 from pysstv.sstv import SSTV
 from pysstv.tests.common import load_pickled_asset
@@ -120,12 +112,14 @@ def AudioPlay():
     filename = 'transmission.wav'
     winsound.PlaySound(filename, winsound.SND_FILENAME)
 
+def transmitSSTV():
+    takePic()
+    lightLevel = lightAnalysis()
+    print(str(lightLevel), "Deos")
+    imageProcessing(lightLevel)
+    ConvSSTV()
+    AudioPlay()
 
-    
 
-takePic()
-lightLevel = lightAnalysis()
-print(str(lightLevel), "Deos")
-imageProcessing(lightLevel)
-ConvSSTV()
-AudioPlay()
+
+transmitSSTV()
