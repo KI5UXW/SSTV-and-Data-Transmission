@@ -73,6 +73,7 @@ def imageProcessing():
     I2.text((30, 46), "The A.M.E.A. Project", fill=(0, 0, 0), font=None, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=3, stroke_fill=None, embedded_color=False)
  
 # Display edited image
+
     img.show()
  
 # Save the edited image
