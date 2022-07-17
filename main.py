@@ -66,7 +66,7 @@ def lightAnalysis():
     im = Image.open('AMEA.png')
     stat = ImageStat.Stat(im)
     r,g,b = stat.mean
-    Deos = math.sqrt(0.241*(r**2) + 0.691*(g**2) + 0.068*(b**2))
+    Deos = (math.sqrt(0.241*(r**2) + 0.691*(g**2) + 0.068*(b**2))) * 0.3950913977
     return Deos
 
 def imageProcessing(Deos):
@@ -87,10 +87,11 @@ def imageProcessing(Deos):
         colorChoice = (255,255,225)
     elif Deos >= 51 and Deos <= 75:
         colorChoice = (0,0,0)
-    elif Deos >= 76 and Deos <= 100:
+    elif Deos >= 76 and Deos <= 101:
         colorChoice = (0,0,0)
     else:
-        colorChoice = (255,0,0)
+        #colorChoice = (255,0,0)
+        pass
     I1 = ImageDraw.Draw(img)
  
     I1.text((30, 36), "KI5UXW Data Transmission", fill=colorChoice, font=myFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=0, stroke_fill=None, embedded_color=False)
@@ -124,7 +125,7 @@ def AudioPlay():
 
 takePic()
 lightLevel = lightAnalysis()
-#print(str(lightLevel), "Deos")
+print(str(lightLevel), "Deos")
 imageProcessing(lightLevel)
 ConvSSTV()
 AudioPlay()
