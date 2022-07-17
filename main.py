@@ -75,13 +75,29 @@ def imageProcessing(Deos):
 
     myFont = ImageFont.truetype('arial.ttf', 15)
 
+    #Black Image: 0.0 Deos
+    #Dark Grey Image: 26.0760322482 Deos
+    #Grey Image: 46.22569353090001 Deos
+    #Light Grey Image: 72.3017257791 Deos
+    #White Image: 100.00000000011728 Deos
+
+    if Deos >= 0 and Deos <= 25:
+        colorChoice = (255,255,255)
+    elif Deos >= 26 and Deos <= 50:
+        colorChoice = (255,255,225)
+    elif Deos >= 51 and Deos <= 75:
+        colorChoice = (0,0,0)
+    elif Deos >= 76 and Deos <= 100:
+        colorChoice = (0,0,0)
+    else:
+        colorChoice = (255,0,0)
     I1 = ImageDraw.Draw(img)
  
-    I1.text((30, 36), "KI5UXW Experimental Data Transmission", fill=(0, 0, 0), font=myFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=1, stroke_fill=None, embedded_color=False)
+    I1.text((30, 36), "KI5UXW Data Transmission", fill=colorChoice, font=myFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=0, stroke_fill=None, embedded_color=False)
 
     I2 = ImageDraw.Draw(img)
 
-    I2.text((30, 46), "The A.M.E.A. Project", fill=(0, 0, 0), font=myFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=1, stroke_fill=None, embedded_color=False)
+    I2.text((30, 50), "The A.M.E.A. Project", fill=colorChoice, font=myFont, anchor=None, spacing=8, alight='left', direction=None, features=None, language=None, stroke_width=0, stroke_fill=None, embedded_color=False)
  
 # Display edited image
 
