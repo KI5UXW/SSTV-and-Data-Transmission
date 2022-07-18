@@ -143,7 +143,35 @@ def transmitSSTVData(dataChosen):
     transmissionList = dataSplitter(workingNumber)
     print(transmissionList)
     for character in transmissionList:
-        pass
+        if character == '1':
+            baseImage = Image.open('One.jpg')
+            baseImage = baseImage.resize((Robot36.WIDTH, Robot36.HEIGHT))
+            sstv = Robot36(baseImage, 44100, 16)
+            sstv.write_wav('data.wav')
+            filename = 'data.wav'
+            winsound.PlaySound(filename, winsound.SND_FILENAME)
+        elif character == '2':
+            baseImage = Image.open('Two.jpg')
+            baseImage = baseImage.resize((Robot36.WIDTH, Robot36.HEIGHT))
+            sstv = Robot36(baseImage, 44100, 16)
+            sstv.write_wav('data.wav')
+            filename = 'data.wav'
+            winsound.PlaySound(filename, winsound.SND_FILENAME)
+        elif character == '3':
+            baseImage = Image.open('Three.jpg')
+            baseImage = baseImage.resize((Robot36.WIDTH, Robot36.HEIGHT))
+            sstv = Robot36(baseImage, 44100, 16)
+            sstv.write_wav('data.wav')
+            filename = 'data.wav'
+            winsound.PlaySound(filename, winsound.SND_FILENAME)
+        elif character == '4':
+            baseImage = Image.open('Four.jpg')
+            baseImage = baseImage.resize((Robot36.WIDTH, Robot36.HEIGHT))
+            sstv = Robot36(baseImage, 44100, 16)
+            sstv.write_wav('data.wav')
+            filename = 'data.wav'
+            winsound.PlaySound(filename, winsound.SND_FILENAME)
+
 
 number = 3.1415926
 
