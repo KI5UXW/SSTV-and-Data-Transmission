@@ -5,5 +5,5 @@ baseImage = Image.open(r'C:\Users\hubba\Documents\GitHub\SSTV-and-Data-Transmiss
 baseImage = baseImage.resize((Robot36.WIDTH, Robot36.HEIGHT))
 sstv = Robot36(baseImage, 44100, 16)
 sstv.write_wav('NASASEES.wav')
-filename = 'NASASEES.wav'
+filename = r'C:\Users\hubba\Documents\GitHub\SSTV-and-Data-Transmission\TestingZone\SSTV Test\NASASEES.wav'
 winsound.PlaySound(filename, winsound.SND_FILENAME)
