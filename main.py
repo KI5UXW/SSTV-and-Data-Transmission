@@ -112,7 +112,25 @@ def AudioPlay():
     filename = 'transmission.wav'
     winsound.PlaySound(filename, winsound.SND_FILENAME)
 
-def transmitSSTV():
+def dataSplitter(thing):
+    thing = str(thing)
+    return [char for char in thing]
+    #From https://www.geeksforgeeks.org/python-split-string-into-list-of-characters/
+
+def dataConversion(number):
+    if number < 10:
+        number = round(number, 2)
+    elif number < 100:
+        number = round(number, 1)
+    elif number < 1000:
+        number = round(number, 0)
+        number = int(number)
+    else:
+        print("Data too large to transmit.")
+        sys.exit()
+    return number
+
+def transmitSSTVPicture():
     takePic()
     lightLevel = lightAnalysis()
     print(str(lightLevel), "Deos")
@@ -120,6 +138,18 @@ def transmitSSTV():
     ConvSSTV()
     AudioPlay()
 
+def transmitSSTVData(dataChosen):
+    workingNumber = dataConversion(dataChosen)
+    transmissionList = dataSplitter(workingNumber)
+    print(transmissionList)
+    for character in transmissionList:
+        pass
 
+number = 3.1415926
 
-transmitSSTV()
+#transmitSSTVPicture()
+transmitSSTVData(number)
+
+#print(str(dataConversion(100.112121212)))
+#print(str(dataConversion(90.112121212)))
+#print(str(dataConversion(1.112121212)))
