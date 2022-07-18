@@ -9,13 +9,11 @@ from PIL import ImageFont
 from PIL import ImageStat
 
 from pysstv import sstv
-from pysstv.sstv import SSTV
-from pysstv.tests.common import load_pickled_asset
 from pysstv.color import Robot36
 
 import winsound
 
-import struct, sys
+import sys
 
 import math
 
@@ -175,9 +173,5 @@ def transmitSSTVData(dataChosen):
 
 number = 3.1415926
 
-#transmitSSTVPicture()
-transmitSSTVData(number)
-
-#print(str(dataConversion(100.112121212)))
-#print(str(dataConversion(90.112121212)))
-#print(str(dataConversion(1.112121212)))
+transmitSSTVPicture()
+#transmitSSTVData(number)
