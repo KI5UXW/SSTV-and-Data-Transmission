@@ -106,7 +106,6 @@ def ConvSSTV():
     sstv.write_wav('transmission.wav')
 
 def AudioPlay():
-
     filename = 'transmission.wav'
     winsound.PlaySound(filename, winsound.SND_FILENAME)
 
