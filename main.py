@@ -115,16 +115,17 @@ def dataSplitter(thing):
     #From https://www.geeksforgeeks.org/python-split-string-into-list-of-characters/
 
 def dataConversion(number):
-    if number < 10:
+    if number < 10 and number > 0:
         number = round(number, 2)
-    elif number < 100:
+        number = "+" + str(number)
+        print(number)
+    elif number < 100 and number > 0:
         number = round(number, 1)
-    elif number < 1000:
+        number = "+" + str(number)
+    elif number < 1000 and number > 0:
         number = round(number, 0)
-        number = int(number)
-    else:
-        print("Data too large to transmit.")
-        sys.exit()
+        number = "+" + str(number)
+    
     return number
 
 def transmitSSTVPicture():
@@ -225,6 +226,7 @@ def transmitSSTVData(dataChosen):
             sstv.write_wav('data.wav')
             filename = 'data.wav'
             winsound.PlaySound(filename, winsound.SND_FILENAME)
+        time.sleep(0.25)
 
 Deos = transmitSSTVPicture()
 transmitSSTVData(Deos)
