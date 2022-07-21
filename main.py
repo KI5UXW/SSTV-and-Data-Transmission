@@ -252,7 +252,5 @@ def transmitSSTVData(dataChosen):
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         time.sleep(0.25)
 
-IDAudioPlay()
 Deos = transmitSSTVPicture()
 transmitSSTVData(Deos)
-IDAudioPlay()
