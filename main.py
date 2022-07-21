@@ -1,3 +1,4 @@
+from logging.config import IDENTIFIER
 import cv2
 import time
 import os
@@ -101,12 +102,14 @@ def ConvSSTV():
     baseImage = Image.open('AMEA.png')
     baseImage = baseImage.resize((Robot36.WIDTH, Robot36.HEIGHT))
     sstv = Robot36(baseImage, 44100, 16)
-    #for freq, msec in sstv.gen_freq_bits():
-        #sys.stdout.write(struct.pack('ff', freq, msec))
     sstv.write_wav('transmission.wav')
 
 def AudioPlay():
     filename = 'transmission.wav'
+    winsound.PlaySound(filename, winsound.SND_FILENAME)
+
+def IDAudioPlay():
+    filename = 'IntroductionMorseCode.wav'
     winsound.PlaySound(filename, winsound.SND_FILENAME)
 
 def dataSplitter(thing):
@@ -118,15 +121,36 @@ def dataConversion(number):
     if number < 10 and number > 0:
         number = round(number, 2)
         number = "+" + str(number)
-        print(number)
     elif number < 100 and number > 0:
         number = round(number, 1)
         number = "+" + str(number)
     elif number < 1000 and number > 0:
         number = round(number, 0)
         number = "+" + str(number)
-    
+    elif number > -10 and number < 0:
+        number = round(number, 2)
+        number = str(number)
+    elif number > -100 and number < 0:
+        number = round(number, 1)
+        number = str(number)
+    elif number > -1000 and number < 0:
+        number = round(number, 0)
+        number = str(number)
+    else:
+        number = str(number)
+        print("Number outside of bounds.")
     return number
+
+def fisrtTransmitSSTVPicture():
+    takePic()
+    lightLevel = lightAnalysis()
+    print(str(lightLevel), "Deos")
+    imageProcessing(lightLevel)
+    ConvSSTV()
+    IDAudioPlay()
+    time.sleep(0.25)
+    AudioPlay()
+    return lightLevel
 
 def transmitSSTVPicture():
     takePic()
@@ -228,5 +252,7 @@ def transmitSSTVData(dataChosen):
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         time.sleep(0.25)
 
+IDAudioPlay()
 Deos = transmitSSTVPicture()
 transmitSSTVData(Deos)
+IDAudioPlay()
