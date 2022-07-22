@@ -19,6 +19,7 @@ def dataConversion(number):
         number = str(number)
     else:
         number = str(number)
+        print("Number outside of bounds.")
     return number
 
 print(str(dataConversion(-1.122134345)))
