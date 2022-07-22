@@ -18,6 +18,10 @@ import sys
 
 import math
 
+def robot36Header():
+    filename = 'Robot36AudioHeader.wav'
+    winsound.PlaySound(filename, winsound.SND_FILENAME)
+
 def takePic():
     # initialize the camera
     # If you have multiple camera connected with 
@@ -141,23 +145,13 @@ def dataConversion(number):
         print("Number outside of bounds.")
     return number
 
-def fisrtTransmitSSTVPicture():
-    takePic()
-    lightLevel = lightAnalysis()
-    print(str(lightLevel), "Deos")
-    imageProcessing(lightLevel)
-    ConvSSTV()
-    IDAudioPlay()
-    time.sleep(0.25)
-    AudioPlay()
-    return lightLevel
-
 def transmitSSTVPicture():
     takePic()
     lightLevel = lightAnalysis()
     print(str(lightLevel), "Deos")
     imageProcessing(lightLevel)
     ConvSSTV()
+    robot36Header()
     AudioPlay()
     return lightLevel
 
@@ -172,6 +166,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '2':
             baseImage = Image.open('Two.jpg')
@@ -179,6 +174,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '3':
             baseImage = Image.open('Three.jpg')
@@ -186,6 +182,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '4':
             baseImage = Image.open('Four.jpg')
@@ -193,6 +190,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '5':
             baseImage = Image.open('Five.jpg')
@@ -200,6 +198,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '6':
             baseImage = Image.open('Six.jpg')
@@ -207,6 +206,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '7':
             baseImage = Image.open('Seven.jpg')
@@ -214,6 +214,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '8':
             baseImage = Image.open('Eight.jpg')
@@ -221,6 +222,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '9':
             baseImage = Image.open('Nine.jpg')
@@ -228,6 +230,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '0':
             baseImage = Image.open('Zero.jpg')
@@ -235,6 +238,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '.':
             baseImage = Image.open('Decimal.jpg')
@@ -242,6 +246,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         elif character == '-':
             baseImage = Image.open('Negative.jpg')
@@ -249,6 +254,7 @@ def transmitSSTVData(dataChosen):
             sstv = Robot36(baseImage, 44100, 16)
             sstv.write_wav('data.wav')
             filename = 'data.wav'
+            robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
         time.sleep(0.25)
 
