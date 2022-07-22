@@ -256,6 +256,14 @@ def transmitSSTVData(dataChosen):
             filename = 'data.wav'
             robot36Header()
             winsound.PlaySound(filename, winsound.SND_FILENAME)
+        elif character == '+':
+            baseImage = Image.open('Positive.jpg')
+            baseImage = baseImage.resize((Robot36.WIDTH, Robot36.HEIGHT))
+            sstv = Robot36(baseImage, 44100, 16)
+            sstv.write_wav('data.wav')
+            filename = 'data.wav'
+            robot36Header()
+            winsound.PlaySound(filename, winsound.SND_FILENAME)
         time.sleep(0.25)
 
 Deos = transmitSSTVPicture()
