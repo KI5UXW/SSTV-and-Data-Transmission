@@ -1,21 +1,14 @@
-from logging.config import IDENTIFIER
 import cv2
 import time
-import os
 import PIL
 import pysstv
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 from PIL import ImageStat
-
 from pysstv import sstv
 from pysstv.color import Robot36
-
 import winsound
-
-import sys
-
 import math
 
 def robot36Header():
