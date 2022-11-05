@@ -1,3 +1,5 @@
+#Program Created by James Ervin 2022
+
 import cv2
 import time
 import PIL
